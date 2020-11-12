@@ -19,8 +19,7 @@ class CreateTasksTable extends Migration
             $table->longText('description');
             $table->date('due_date');
             $table->string('state');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
 
             $table->foreignId('category_id')->constrained('categories')
                 ->onDelete('cascade')

@@ -2,17 +2,19 @@
 
 namespace Database\Factories;
 
-use App\Models\TaskUsers;
+use App\Models\Task;
+use App\Models\TaskUser;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TaskUsersFactory extends Factory
+class TaskUserFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = TaskUsers::class;
+    protected $model = TaskUser::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +24,9 @@ class TaskUsersFactory extends Factory
     public function definition()
     {
         return [
-            //
+
+            'user_id' => User::factory(),
+            'task_id' => Task::factory(),
         ];
     }
 }

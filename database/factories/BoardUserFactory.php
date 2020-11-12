@@ -2,17 +2,19 @@
 
 namespace Database\Factories;
 
-use App\Models\BoardUsers;
+use App\Models\BoardUser;
+use App\Models\Board;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BoardUsersFactory extends Factory
+class BoardUserFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = BoardUsers::class;
+    protected $model = BoardUser::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +24,8 @@ class BoardUsersFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'board_id' => Board::factory(),
+            'user_id' => User::factory(),
         ];
     }
 }

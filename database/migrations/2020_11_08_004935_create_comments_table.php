@@ -14,8 +14,16 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
+            $table->longText('text');
             $table->timestamps();
+
+            $table->foreignId('user_id')->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('task_id')->constrained('tasks')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
