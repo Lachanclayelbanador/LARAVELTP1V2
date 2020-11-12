@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Users;
+use App\Models\TaskUsers;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class UsersFactory extends Factory
+class TaskUsersFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Users::class;
+    protected $model = TaskUsers::class;
 
     /**
      * Define the model's default state.
